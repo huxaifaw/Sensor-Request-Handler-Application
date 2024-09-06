@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: SensorRequestHandler
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+    mongodb:
+      database: sensors
+      host: localhost
+      port: 27017
+
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+
+  kafka:
+    consumer:
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    bootstrap-servers: localhost:9092
